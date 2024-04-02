@@ -1,0 +1,13 @@
+{
+  "name": "module-federation",
+  "version": "1.0.0",
+  "description": "",
+  "workspaces":[
+    "packages/*",
+    "services/*"
+  ],
+  "scripts": {
+    "start": "npm run start -w services/admin & npm run start -w services/dashboard & npm run start -w services/host"
+  }
+
+}
