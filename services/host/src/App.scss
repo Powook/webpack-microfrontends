@@ -1,0 +1,42 @@
+* {
+  color: black;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-weight: 500;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.app_wrapper {
+  max-width: 80%;
+  margin: 0 auto;  
+}
+
+.app_header {
+
+  height: 60px;
+  margin: 40px 0;
+  background-color: rgb(52, 52, 130);
+
+  &>nav{
+    display: contents;
+
+    &>ul  {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      list-style: none;
+      height: 100%;
+    }
+  }
+
+  .link {
+    color: white;
+
+    &:hover {
+      color: gold;
+    }
+
+    transition: all .4s ease;
+  }
+}

@@ -1,24 +1,22 @@
 import { Link, Outlet } from "react-router-dom";
+import { HEADER_LINKS } from "../constants/constants";
+import styles from './App.scss';
 
 export function App() {
-  return <div>
-    HOST
-     <nav>
-        <ul>
-          <li>
-            <Link to="/admin">Admin</Link>
-          </li>
-          <li>
-            <Link to="/admin/about">Admin about</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-          <li>
-            <Link to="/a">Nothing Here</Link>
-          </li>
-        </ul>
-      </nav>
-      <Outlet/>
-  </div>
+  return (
+    <div className={styles.app_wrapper}>
+      <header className={styles.app_header}>
+        <nav>
+          <ul>
+            {HEADER_LINKS.map(link=>(
+              <li><Link className={styles.link} to={link.route}>{link.title}</Link></li>
+            ))}
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <Outlet/>
+      </main>
+    </div>
+  )
 }

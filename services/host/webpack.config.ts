@@ -1,7 +1,7 @@
 
-import {buildWebpack, BuildPaths, Mode} from '@packages/webpack-build'
+import { BuildPaths, Mode, buildWebpack } from '@packages/webpack-build'
 import path from 'path'
-import  webpack  from 'webpack'
+import webpack from 'webpack'
 import packageJson from './package.json'
 
 interface Envs {
@@ -31,8 +31,8 @@ export default (env: Envs) => {
     name:'host',
     filename:'remoteEntry.js',
     remotes: {
-      admin:`admin@${ADMIN_REMOTE_URL}/remoteEntry.js`,
-      dashboard:`dashboard@${DASHBOARD_REMOTE_URL}/remoteEntry.js`
+      // admin:`admin@${ADMIN_REMOTE_URL}/remoteEntry.js`,
+      // dashboard:`dashboard@${DASHBOARD_REMOTE_URL}/remoteEntry.js`
     },
     shared: {
       ...packageJson.dependencies,

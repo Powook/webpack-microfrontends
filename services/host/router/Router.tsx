@@ -1,16 +1,65 @@
 import { createBrowserRouter } from "react-router-dom";
 import { App } from "../src/App";
 //@ts-ignore
-import adminRoutes from 'admin/Router'
 //@ts-ignore
-import dashboardRoutes from 'dashboard/Router'
+import { Suspense } from "react";
 
 export const router = createBrowserRouter([{
   path:'/',
   element: <App/>,
   children: [
-    ...adminRoutes,
-    ...dashboardRoutes
+    // ...adminRoutes,
+    // ...dashboardRoutes
+    {
+      path: "/admin",
+      element: <div>lorem</div>,
+      children: [
+          {
+              path: '/admin/about',
+              element:  <Suspense fallback={'Loading...'}>Hello Admin</Suspense>
+          },
+      ]
+  },
+  {
+    path: "/admin",
+    element: <div>ipsum</div>,
+    children: [
+        {
+            path: '/admin/about',
+            element:  <Suspense fallback={'Loading...'}>Hello Admin</Suspense>
+        },
+    ]
+},
+{
+  path: "/admin",
+  element: <div>second</div>,
+  children: [
+      {
+          path: '/admin/about',
+          element:  <Suspense fallback={'Loading...'}>Hello Admin</Suspense>
+      },
+  ]
+},
+{
+  path: "/admin",
+  element: <div>while</div>,
+  children: [
+      {
+          path: '/admin/about',
+          element:  <Suspense fallback={'Loading...'}>Hello Admin</Suspense>
+      },
+  ]
+},
+{
+  path: "/admin",
+  element: <div>gang</div>,
+  children: [
+      {
+          path: '/admin/about',
+          element:  <Suspense fallback={'Loading...'}>Hello Admin</Suspense>
+      },
+  ]
+},
   ]
 }
 ])
