@@ -11,9 +11,4 @@
     "esModuleInterop": true,
     "composite": true
   },
-  "ts-node": {
-    "compilerOptions": {
-      "module": "CommonJS"
-    }
-  }
 }

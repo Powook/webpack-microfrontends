@@ -31,7 +31,7 @@ export default (env: Envs) => {
     name:'host',
     filename:'remoteEntry.js',
     remotes: {
-      // admin:`admin@${ADMIN_REMOTE_URL}/remoteEntry.js`,
+      admin:`admin@${ADMIN_REMOTE_URL}/remoteEntry.js`,
       // dashboard:`dashboard@${DASHBOARD_REMOTE_URL}/remoteEntry.js`
     },
     shared: {

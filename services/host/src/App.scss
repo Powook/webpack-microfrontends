@@ -1,10 +1,15 @@
 * {
+  box-sizing: border-box;
   color: black;
   margin: 0;
   padding: 0;
   text-decoration: none;
   font-weight: 500;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: rgba(155, 155, 235, 0.219);
 }
 
 .app_wrapper {
