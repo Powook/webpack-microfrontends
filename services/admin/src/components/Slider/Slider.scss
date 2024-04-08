@@ -6,13 +6,14 @@
     background-color: rgb(255, 255, 255);
     height: 400px;
     border-radius: 20px;
+    box-shadow: 1px 1px 14px 0px #00000024;
+    overflow: hidden;
 }
 
 .card_image {
-    height: 100%;
     width: 100%;
     border-radius: 12px;
-    background-color: antiquewhite;
+    aspect-ratio: 1;
 }
 
 .card_bottom {
@@ -27,7 +28,9 @@
 }
 
 .card_title {
+    text-wrap: nowrap;
     text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .slider {

@@ -12,7 +12,7 @@ type ButtonProps= {
 
 export function Button({text, onClick, btnClass, width, height, type='filled'}: ButtonProps) {
   return ( 
-    <button onClick={onClick} style={{width: width || "100%", height: height || "2.3em"}} className={cl( btnClass, styles.btn,  type === 'filled' ? styles.filled_btn : styles.outline_btn)}> 
+    <button onClick={onClick} style={{width: width || "auto", height: height || "2.3em"}} className={cl( btnClass, styles.btn,  type === 'filled' ? styles.filled_btn : styles.outline_btn)}> 
       {text}
     </button>)
 }
