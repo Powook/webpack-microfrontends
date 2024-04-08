@@ -2,33 +2,37 @@ import { useEffect, useState } from 'react'
 import styles from './Slider.scss'
 import cl from 'classnames'
 import { Loader } from '../Loader/Loader'
+import { Button } from '@packages/shared'
 
 export function Slider() {
-    const [card, setCard] = useState(null)
+    const [cards, setCards] = useState(null)
     const [number, setNumber] = useState(1)
 
     useEffect(()=>{
-        fetch(`https://jsonplaceholder.typicode.com/posts/${number}`).then(x=>x.json()).then(x=>setCard(x))
-        return ()=> setCard(null)
+        fetch(`https://jsonplaceholder.typicode.com/posts/`).then(x=>x.json()).then(x=>setCards(x))
+        return ()=> setCards(null)
     }, [number])
 
     function handlePress() {
         setNumber(prev=>prev+1)
     }
 
+    if (!cards?.length) {
+        return <Loader/>
+    }
+
     return (
         <div className={styles.slider}>
-            <button onClick={()=>console.log('cancel')} className={cl(styles.cancel, styles.button)}>X</button>
-            <div className={styles.card}>
-                {card ? (
-                    <>
-                        <h1>{card.title}</h1>
-                        <p>{card.body}</p>
-                    </>
-                ) : <Loader/>}
-
+            {cards.map((card: any)=>(
+                <div className={styles.card}>
+                    <div className={styles.card_image}/>
+                    <h2 className={styles.card_title}>{card.title}</h2>
+                    <div className={styles.card_bottom}>
+                        <span>Число откликов: {card.id}</span>
+                        <Button type='outline' btnClass={styles.card_button} text="Подробнее" onClick={()=>{}}/>
+                    </div>
             </div>
-            <button onClick={()=>handlePress()} className={cl(styles.accept, styles.button)}>V</button>
+            ))}
       </div>
     )
 }

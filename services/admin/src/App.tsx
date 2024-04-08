@@ -7,9 +7,7 @@ import { Slider } from "./components/Slider/Slider";
 export function App() {
   return <div>
     <Suspense fallback={<div>loading</div>}>
-    <Block>
       <Slider/>
-    </Block>
       <Outlet/>
       </Suspense>
   </div>

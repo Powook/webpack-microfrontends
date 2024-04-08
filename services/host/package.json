@@ -30,6 +30,7 @@
   "dependencies": {
     "-": "^0.0.1",
     "@packages/webpack-build": "1.0.0",
+    "@packages/shared": "1.0.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
     "@svgr/webpack": "^8.1.0",
     "@types/node": "^20.8.3",
