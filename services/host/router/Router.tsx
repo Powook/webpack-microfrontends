@@ -4,12 +4,16 @@ import { App } from "../src/App";
 //@ts-ignore
 import adminRoutes from 'admin/Router'
 import { Suspense } from "react";
+import { ErrorPage } from "../pages/ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([{
-  path:'/',
+  path:'/', // here TODO
   element: <App/>,
   children: [
     ...adminRoutes,
+    {path: '*',
+      element:<ErrorPage/>
+    }
     // ...dashboardRoutes
 //   {
 //     path: "/admin2",

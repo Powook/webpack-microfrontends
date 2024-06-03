@@ -2,12 +2,22 @@
   "name": "module-federation",
   "version": "1.0.0",
   "description": "",
-  "workspaces":[
+  "workspaces": [
     "packages/*",
     "services/*"
   ],
   "scripts": {
     "start": "npm run start -w services/admin & npm run start -w services/dashboard & npm run start -w services/host"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.1.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.1",
+    "globals": "^15.1.0",
+    "typescript-eslint": "^7.7.1"
+  },
+  "dependencies": {
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.29.1"
   }
-
 }
